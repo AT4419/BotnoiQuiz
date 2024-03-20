@@ -1,0 +1,29 @@
+<div><h2>STARS</h2></div>
+<div>
+  <input
+    type="text"
+    placeholder="ป้อนเลข"
+    value="{{ num }}"
+    [(ngModel)]="num"
+  />
+  <button (click)="star(num)">star</button>
+</div>
+<div>
+  <p *ngFor="let stars of showStar">{{ stars }}</p>
+</div>
+<div><h2>API Pokemon</h2></div>
+<button (click)="getLoop()">Get Pokemon dex</button>
+<div class="bg" *ngFor="let pokemon of pokeDex" style="text-align: center">
+  <img src="{{ pokemon.imgfront }}" />
+  <img src="{{ pokemon.imgback }}" />
+  <p>name: {{ pokemon.name }}</p>
+  <p>Type1: {{ pokemon.Type1 }}</p>
+  <p *ngIf="pokemon.Type2 !== ''">Type2: {{ pokemon.Type2 }}</p>
+  <p>Base stats:</p>
+  <p>hp= {{ pokemon.hp }}</p>
+  <p>attack= {{ pokemon.att }}</p>
+  <p>defense= {{ pokemon.def }}</p>
+  <p>special-attack= {{ pokemon.special_att }}</p>
+  <p>special-defense= {{ pokemon.special_def }}</p>
+  <p>speed= {{ pokemon.speed }}</p>
+</div>
